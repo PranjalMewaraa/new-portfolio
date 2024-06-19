@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import anim from "../../assets/anims/mouseanim.json";
 
@@ -20,30 +20,37 @@ import cs from "../../assets/project/CS.webp";
 import j4d from "../../assets/project/J4D.webp";
 import rent from "../../assets/project/rent.webp";
 import jf from "../../assets/project/JF.webp";
-import emailjs from "emailjs";
+
 const Home = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_3z5nf3t",
-        "template_iz465wh",
-        e.target,
-        "UU13MJZWeQa8diKvU"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Message Sent Successfully");
-        },
-        (error) => {
-          console.log(error.text);
-          alert("An error occurred, Please try again");
-        }
-      );
+    const { name, email, message } = formData;
+    const subject = encodeURIComponent("Contact Form Message");
+    const body = encodeURIComponent(
+      `Hey I am ${name}\n I have an idea : ${message} , please look into that if we can do something\n Regards,\n${name} \n ${email}`
+    );
+    window.location.href = `mailto:recipient-email@example.com?subject=${subject}&body=${body}`;
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   useGSAP(() => {
@@ -534,6 +541,8 @@ const Home = () => {
                   className=" border-b my-2 italic border-[#000] bg-transparent px-4 placeholder-[#14CF93]"
                   name="name"
                   placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </span>{" "}
               <br />
@@ -548,6 +557,8 @@ const Home = () => {
                   type="text"
                   name="email"
                   placeholder="Your Email address"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </span>{" "}
               <br />
@@ -558,6 +569,8 @@ const Home = () => {
                   type="text"
                   name="message"
                   placeholder="Let your creativity flow freely "
+                  value={formData.message}
+                  onChange={handleChange}
                 />
               </span>{" "}
             </p>
