@@ -20,8 +20,32 @@ import cs from "../../assets/project/CS.webp";
 import j4d from "../../assets/project/J4D.webp";
 import rent from "../../assets/project/rent.webp";
 import jf from "../../assets/project/JF.webp";
+import emailjs from "emailjs";
 const Home = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_3z5nf3t",
+        "template_iz465wh",
+        e.target,
+        "UU13MJZWeQa8diKvU"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message Sent Successfully");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("An error occurred, Please try again");
+        }
+      );
+  };
+
   useGSAP(() => {
     gsap.to(".player", {
       scrollTrigger: {
@@ -492,6 +516,7 @@ const Home = () => {
         <div className="w-screen md:w-full min-h-screen h-fit flex flex-col p-4 md:p-10 gap-4 overflow-hidden">
           <form
             id="contact"
+            onSubmit={sendEmail}
             className="w-full p-8 text-3xl md:text-[3vw] my-4 font-[gil] md:text-left ml-auto text-black"
           >
             <br />
@@ -507,7 +532,7 @@ const Home = () => {
                 <input
                   type="text"
                   className=" border-b my-2 italic border-[#000] bg-transparent px-4 placeholder-[#14CF93]"
-                  name="Name"
+                  name="name"
                   placeholder="Your Name"
                 />
               </span>{" "}
@@ -521,7 +546,7 @@ const Home = () => {
                 <input
                   className=" border-b italic my-2 border-[#000] bg-transparent px-4 placeholder-[#14CF93]"
                   type="text"
-                  name="Email"
+                  name="email"
                   placeholder="Your Email address"
                 />
               </span>{" "}
@@ -531,7 +556,7 @@ const Home = () => {
                 <input
                   className=" border-b w-full italic border-[#000] bg-transparent px-4 my-3 placeholder-[#14cf93]"
                   type="text"
-                  name="Idea"
+                  name="message"
                   placeholder="Let your creativity flow freely "
                 />
               </span>{" "}
