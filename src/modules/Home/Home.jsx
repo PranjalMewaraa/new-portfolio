@@ -489,7 +489,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="w-full min-h-screen h-fit flex flex-col p-4 md:p-10 gap-4 ">
+        <div className="w-screen md:w-full min-h-screen h-fit flex flex-col p-4 md:p-10 gap-4 overflow-hidden">
           <form
             id="contact"
             className="w-full p-8 text-3xl md:text-[3vw] my-4 font-[gil] md:text-left ml-auto text-black"
@@ -551,7 +551,7 @@ const Home = () => {
       <footer
         ref={footerRef}
         className={
-          "w-full h-screen py-20 px-10 flex flex-col gap-10 bg-custom-green bg-footer-bg bg-fixed bg-cover bg-center"
+          "w-full h-fit md:h-screen py-20 px-10 flex flex-col gap-10 bg-custom-green bg-footer-bg bg-fixed bg-cover bg-center"
         }
         style={{ backgroundPositionY: "100%" }}
       >
