@@ -20,6 +20,7 @@ import cs from "../../assets/project/CS.webp";
 import j4d from "../../assets/project/J4D.webp";
 import rent from "../../assets/project/rent.webp";
 import jf from "../../assets/project/JF.webp";
+import cv from "../../assets/project/cover.webp";
 
 const Home = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -207,6 +208,17 @@ const Home = () => {
     gsap.from("#sp5", {
       scrollTrigger: {
         trigger: "#sp5",
+        start: "top 90%",
+        end: "top 50%",
+      },
+
+      y: 50,
+      duration: 1,
+      opacity: 0,
+    });
+    gsap.from("#sp6", {
+      scrollTrigger: {
+        trigger: "#sp6",
         start: "top 90%",
         end: "top 50%",
       },
@@ -481,6 +493,20 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            <div className="hidden sm:h-[60vh] md:h-[80vh] w-full md:flex  justify-center my-20">
+              <div
+                id="sp6"
+                className="w-full md:w-2/3 xl:w-1/2 h-full "
+                onMouseEnter={getRole}
+                onMouseLeave={remRole}
+              >
+                <Featured
+                  projectName="FitBridge App"
+                  img={cv}
+                  role="Mobile Dev."
+                />
+              </div>
+            </div>
             <div className="w-full h-fit py-10 flex flex-col gap-8 md:hidden">
               <div className="w-full h-[40vh] flex justify-center items-center">
                 <Featured
@@ -515,6 +541,13 @@ const Home = () => {
                   projectName="Skye Social stop"
                   img={j4d}
                   role="UI UX & F.E."
+                />
+              </div>
+              <div className="w-full h-[40vh] flex justify-center items-center">
+                <Featured
+                  projectName="FitBridge App"
+                  img={cv}
+                  role="Mobile Dev."
                 />
               </div>
             </div>
