@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import anim from "../../assets/anims/mouseanim.json";
 
@@ -21,6 +21,7 @@ import j4d from "../../assets/project/J4D.webp";
 import rent from "../../assets/project/rent.webp";
 import jf from "../../assets/project/JF.webp";
 import cv from "../../assets/project/cover.webp";
+import LocomotiveScroll from "locomotive-scroll";
 
 const Home = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -38,6 +39,7 @@ const Home = () => {
       [name]: value,
     }));
   };
+  const scrollRef = createRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -291,6 +293,13 @@ const Home = () => {
       y: 10,
     });
   };
+
+  // useEffect(() => {
+  //   const scroll = new LocomotiveScroll({
+  //     el: document.getElementById("scroll"),
+  //     smooth: true,
+  //   });
+  // });
 
   return (
     <>

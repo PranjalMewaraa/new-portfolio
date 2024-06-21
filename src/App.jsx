@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { createRef, useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -8,6 +8,7 @@ import { Controls, Player } from "@lottiefiles/react-lottie-player";
 import anim from "./assets/anims/blob.json";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import LocomotiveScroll from "locomotive-scroll";
 function App() {
   useEffect(() => {
     var crsr = document.querySelector(".cursor");
@@ -37,6 +38,7 @@ function App() {
       stagger: 0.3,
     });
   });
+
   return (
     <>
       <div className="hidden md:flex cursor pointer-events-none fixed z-50 transition ease-in-out duration-500 bg-center bg-cover mix-blend-difference">
