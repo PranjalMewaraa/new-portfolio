@@ -388,7 +388,7 @@ const Home = () => {
                     Software Developer - React{" "}
                     <span className=" text-slate-400 text-xl md:text-[1.5vw] font-serif underline underline-offset-4">
                       <LinkPreview
-                        url="https://crudstudio.com"
+                        url="https://crudstudio.com/home"
                         className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                       >
                         {`crudstudio ↗ (2023-2024)`}
@@ -399,7 +399,7 @@ const Home = () => {
                     Lead UI UX Design{" "}
                     <span className=" text-slate-400 text-xl md:text-[1.5vw] font-serif underline underline-offset-4">
                       <LinkPreview
-                        url="https://crudstudio.com"
+                        url="https://crudstudio.com/home"
                         className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
                       >
                         {`crudstudio ↗ (2023-2024)`}
