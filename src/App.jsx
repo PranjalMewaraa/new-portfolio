@@ -61,7 +61,7 @@ function App() {
             id="land"
             className=" absolute z-20 h-screen w-screen flex justify-center items-center bg-[#161616]"
           >
-            <div className="w-screen text-white text-3xl flex font-[med] mr-2">
+            <div className="w-screen text-white teext-lg md:text-3xl flex font-[med] mr-2">
               {"Hey ! Welcome to My Portfolio".split(" ").map((item, idx) => {
                 if (item === "Portfolio") {
                   return (
