@@ -61,13 +61,13 @@ function App() {
             id="land"
             className=" absolute z-20 h-screen w-screen flex justify-center items-center bg-[#161616]"
           >
-            <div className="w-screen text-white teext-lg md:text-3xl flex font-[med] mr-2">
-              {"Hey ! Welcome to My Portfolio".split(" ").map((item, idx) => {
+            <div className="w-screen text-white flex md:flex-row flex-col justify-center items-center font-[med] mr-2">
+              {"Hey! Welcome to My Portfolio".split(" ").map((item, idx) => {
                 if (item === "Portfolio") {
                   return (
                     <p
                       id="spanText"
-                      className="text-[#7dff66] text-5xl font-[italica] mr-2"
+                      className="text-[#7dff66] text-4xl md:text-5xl font-[italica] mr-2"
                       key={item + idx}
                     >
                       {` ${item} `}
@@ -78,7 +78,7 @@ function App() {
                     <>
                       <p
                         id="spanText"
-                        className="text-white text-5xl font-[med] mr-2"
+                        className="text-white text-4xl md:text-5xl font-[med] mr-2"
                         key={item + idx}
                       >
                         {` ${item} `}
