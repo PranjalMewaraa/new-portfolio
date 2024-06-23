@@ -37,7 +37,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="flex md:hidden w-full justify-between items-center h-10 mt-10 px-10 z-50 fixed bg-white shadow-md">
+      <div className="flex md:hidden w-full justify-between items-center min-h-10 pt-5 pb-2 px-10 z-50 fixed bg-white shadow-md">
         <p className="text-black font-semibold text-3xl">
           P<span className="font-italic text-[#14CF93]">k</span>.
         </p>

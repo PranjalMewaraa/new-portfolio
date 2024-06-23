@@ -37,6 +37,11 @@ function App() {
       duration: 0.1,
       stagger: 0.3,
     });
+    gsap.to("#spanText", {
+      duration: 0.5,
+      opacity: 0,
+      delay: 3,
+    });
   });
 
   return (
@@ -61,7 +66,10 @@ function App() {
             id="land"
             className=" absolute z-20 h-screen w-screen flex justify-center items-center bg-[#161616]"
           >
-            <div className="w-screen text-white flex md:flex-row flex-col justify-center items-center font-[med] mr-2">
+            <div
+              id="textnew"
+              className="w-screen text-white flex md:flex-row flex-col justify-center items-center font-[med] mr-2"
+            >
               {"Hey! Welcome to My Portfolio".split(" ").map((item, idx) => {
                 if (item === "Portfolio") {
                   return (
@@ -96,7 +104,6 @@ function App() {
         </div>
       ) : (
         <>
-          {" "}
           <Navbar />
           <Home />
         </>
